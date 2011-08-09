@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="Persistences.Orderdetails" table="ORDERDETAILS">
+    <id column="ID" name="id" type="int">
+      <generator class="identity"/>
+    </id>
+    <many-to-one cascade="all" class="Persistences.Orders" column="IDORDER" name="idorder"/>
+    <many-to-one cascade="all" class="Persistences.Products" column="IDPRODUCT" name="idproduct"/>
+    <property column="QUANTITY" name="quantity" type="int"/>
+    <property column="PRICE" name="price" type="long"/>
+  </class>
+</hibernate-mapping>

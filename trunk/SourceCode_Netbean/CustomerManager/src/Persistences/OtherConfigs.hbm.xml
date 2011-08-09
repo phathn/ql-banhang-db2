@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="Persistences.Otherconfigs" table="OTHERCONFIGS">
+        <id column="ID" name="id" type="int">
+            <generator class="identity"/>
+        </id>
+        <property column="CODEEXPIREDAY" name="codeexpireday" type="int"/>
+        <property column="EMAILCOMPANY" name="emailcompany" type="string"/>
+        <property column="PASSWORDEMAILCOMPANY" name="passwordemailcompany" type="string"/>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <property name="hibernate.connection.driver_class">com.ibm.db2.jcc.DB2Driver</property>
+    <property name="hibernate.connection.url">jdbc:db2://localhost:50000/customer</property>
+    <property name="hibernate.connection.username">db2admin</property>
+    <property name="hibernate.connection.password">123456789</property>
+    <!-- SQL dialect -->
+    <property name="dialect">org.hibernate.dialect.DB2Dialect</property>
+    <property name="show_sql">true</property>
+    <property name="hibernate.hbm2ddl.auto">update</property>
+    <!-- Echo all executed SQL to stdout -->
+    <mapping resource="Persistences/Producers.hbm.xml"/>
+    <mapping resource="Persistences/ProductCategories.hbm.xml"/>
+    <mapping resource="Persistences/Distributors.hbm.xml"/>
+    <mapping resource="Persistences/Roles.hbm.xml"/>
+    <mapping resource="Persistences/CustomerCategories.hbm.xml"/>
+    <mapping resource="Persistences/Products.hbm.xml"/>
+    <mapping resource="Persistences/Customers.hbm.xml"/>
+    <mapping resource="Persistences/Users.hbm.xml"/>
+    <mapping resource="Persistences/Orders.hbm.xml"/>
+    <mapping resource="Persistences/OrderDetails.hbm.xml"/>
+    <mapping resource="Persistences/Scheduling.hbm.xml"/>
+    <mapping resource="Persistences/SalePromotion.hbm.xml"/>
+    <mapping resource="Persistences/OtherConfigs.hbm.xml"/>
+    <mapping resource="Persistences/Targets.hbm.xml"/>
+  </session-factory>
+</hibernate-configuration>
