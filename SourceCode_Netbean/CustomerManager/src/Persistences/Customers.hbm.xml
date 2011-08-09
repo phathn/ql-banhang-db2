@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="Persistences.Customers" table="CUSTOMERS">
+    <id column="ID" name="id" type="int">
+      <generator class="identity"/>
+    </id>
+    <many-to-one class="Persistences.Customercategories" column="IDCATEGORY" name="idcategory"/>
+    <property column="NAME" name="name" type="string"/>
+    <property column="ADDRESS" name="address" type="string"/>
+    <property column="PHONE" name="phone" type="string"/>
+    <property column="CAREER" name="career" type="string"/>
+    <property column="SEX" name="sex" type="short"/>
+    <property column="EMAIL" name="email" type="string"/>
+  </class>
+</hibernate-mapping>

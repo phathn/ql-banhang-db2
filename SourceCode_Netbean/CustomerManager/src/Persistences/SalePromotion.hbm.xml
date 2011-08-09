@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="Persistences.Salepromotion" table="SALEPROMOTION">
+    <id column="ID" name="id" type="int">
+      <generator class="identity"/>
+    </id>
+    <property column="CODE" name="code" type="string"/>
+    <property column="DATESTORE" name="datestore" type="date"/>
+    <many-to-one class="Persistences.Customers" column="IDCUSTOMER" name="idcustomer"/>
+  </class>
+</hibernate-mapping>

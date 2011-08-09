@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="Persistences.Products" table="PRODUCTS">
+    <id column="ID" name="id" type="int">
+      <generator class="identity"/>
+    </id>
+    <property column="NAME" name="name" type="string"/>
+    <property column="PRICE" name="price" type="java.lang.Long"/>
+    <property column="QUANTITY" name="quantity" type="int"/>
+    <property column="PHOTO" name="photo" type="binary"/>
+    <many-to-one cascade="all" class="Persistences.Productcategories" column="IDPRODUCTCATEGORY" name="idproductcategory"/>
+    <many-to-one cascade="all" class="Persistences.Distributors" column="IDDISTRIBUTOR" name="iddistributor"/>
+    <many-to-one cascade="all" class="Persistences.Producers" column="IDPRODUCER" name="idproducer"/>
+    <set cascade="all" inverse="false" name="orderdetailsCollection" table="ORDERDETAILS">
+      <key>
+        <column name="idproduct"/>
+      </key>
+      <many-to-many entity-name="Persistences.Orders">
+        <column name="idorder"/>
+      </many-to-many>
+    </set>
+  </class>
+</hibernate-mapping>
